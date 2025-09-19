@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- 1. basic house-keeping -->
+  <meta charset="utf-8">
+  <title>Your Brand – Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 2. quick SEO -->
+  <meta name="description" content="Official store – limited drops every Friday.">
+
+  <!-- 3. the styles (all in one place so we don't need extra files) -->
+  <style>
+    /* reset browser defaults */
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    /* make the page fill the screen and hide scrollbars */
+    html,body{height:100%;overflow:hidden}
+
+    /* centre everything with flexbox */
+    body{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+
+    /* fullscreen background container */
+    .bg{
+      position:fixed;   /* sit behind everything */
+      inset:0;          /* top:0 right:0 bottom:0 left:0 */
+      z-index:-1;       /* push to back */
+      background:#000;  /* fallback colour while video loads */
+    }
+    /* the actual video */
+    .bg video{
+      width:100%;
+      height:100%;
+      object-fit:cover; /* crop to cover screen */
+    }
+
+    /* dark overlay so the white icon pops (optional) */
+    .bg::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.35);
+    }
+
+    /* the clickable shop icon */
+    .gate{
+      cursor:pointer;
+      transition:transform .3s ease;
+    }
+    .gate:hover{transform:scale(1.08)} /* grow on hover */
+
+    /* gentle pulse animation */
+    @keyframes pulse{
+      50%{transform:scale(1.04)}
+    }
+    .gate{animation:pulse 2.5s infinite}
+  </style>
+</head>
+
+<body>
+  <!-- 4. background video -->
+  <div class="bg">
+    <video autoplay muted loop playsinline>
+      <source src="bg.mp4" type="video/mp4">
+      <!-- if you also made a .webm copy you can add another <source> here -->
+    </video>
+  </div>
+  <img src="icon.png" width="140" height="140" alt="Shop">
+    -->
+    <svg width="140" height="140" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="11" fill="#fff"/>
+      <path d="M7 8c0-1.11.89-2 2-2h6c1.11 0 2 .89 2 2v8H7V8zm9 9H8v-1h8v1zm-4-3c-1.11 0-2-.89-2-2s.89-2 2-2 2 .89 2 2-.89 2-2 2z" fill="#000"/>
+    </svg>
+  </div>
+
+  <!-- 6. the only JavaScript we need -->
+  <script>
+    function goShop(){
+      // ↓↓↓ CHANGE THIS TO YOUR REAL SHOP URL ↓↓↓
+      window.location.href = 'https://www.alibaba.com/?src=sem_ggl&field=UG&from=sem_ggl&cmpgn=22231466799&adgrp=178850966310&fditm=&tgt=kwd-14739453&locintrst=&locphyscl=9076986&mtchtyp=e&ntwrk=g&device=c&dvcmdl=&creative=732977722035&plcmnt=&plcmntcat=&aceid=&position=&gad_source=1&gad_campaignid=22231466799&gbraid=0AAAAAD8m77pbkARiGYl0YHYlhd3qnjS7Q&gclid=Cj0KCQjw_rPGBhCbARIsABjq9cdoWyJq7sgiuNyrEnq1RnwqKBQeh4EwER9HYcmbKqhse1xWZCZxIowaAnGKEALw_wcB';
+    }
+  </script>
+</body>
+</html>
