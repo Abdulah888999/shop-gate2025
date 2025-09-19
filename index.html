@@ -69,15 +69,9 @@
       <source src="bg.mp4" type="video/mp4">
       <!-- if you also made a .webm copy you can add another <source> here -->
     </video>
-  </div>
-  <img src="icon.png" width="140" height="140" alt="Shop">
-    -->
-    <svg width="140" height="140" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="11" fill="#fff"/>
-      <path d="M7 8c0-1.11.89-2 2-2h6c1.11 0 2 .89 2 2v8H7V8zm9 9H8v-1h8v1zm-4-3c-1.11 0-2-.89-2-2s.89-2 2-2 2 .89 2 2-.89 2-2 2z" fill="#000"/>
-    </svg>
-  </div>
-
+<div class="gate" onclick="goShop()" aria-label="Enter shop">
+  <img src="icon.svg" width="140" height="140" alt="Shop">
+</div>
   <!-- 6. the only JavaScript we need -->
   <script>
     function goShop(){
@@ -86,4 +80,5 @@
     }
   </script>
 </body>
+
 </html>
