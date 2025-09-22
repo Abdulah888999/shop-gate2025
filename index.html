@@ -42,10 +42,13 @@
     /* non-clickable centre logo */
 .center-logo{
   position:fixed;
-  inset:0;                 /* top:0 right:0 bottom:0 left:0 */
-  margin:auto;             /* dead centre */
-  z-index:1;               /* behind the clickable corner logo */
-  pointer-events:none;     /* makes it non-clickable */
+  inset:0;                    /* stretch to full viewport */
+  margin:auto;                /* dead-centre trick */
+  z-index:1;
+  pointer-events:none;
+  display:flex;               /* centre its child */
+  align-items:center;
+  justify-content:center;
 }
 .center-logo img{
   width:120px;             /* change size here */
@@ -107,6 +110,7 @@
 </body>
 
 </html>
+
 
 
 
