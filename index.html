@@ -39,6 +39,20 @@
       object-fit:cover; /* crop to cover screen */
     }
 
+    /* non-clickable centre logo */
+.center-logo{
+  position:fixed;
+  inset:0;                 /* top:0 right:0 bottom:0 left:0 */
+  margin:auto;             /* dead centre */
+  z-index:1;               /* behind the clickable corner logo */
+  pointer-events:none;     /* makes it non-clickable */
+}
+.center-logo img{
+  width:120px;             /* change size here */
+  height:120px;
+  opacity:0.8;             /* optional fade */
+}
+
     /* dark overlay so the white icon pops (optional) */
     .bg::after{
       content:'';
@@ -80,6 +94,11 @@
     <img src="icon.svg" width="70" height="70" alt="Shop">
   </div>
 
+    <!-- 3. centre NON-clickable logo -->
+  <div class="center-logo">
+    <img src="center-logo.png" width="120" height="120" alt="Brand mark">
+  </div>
+
   <script>
     function goShop(){
       window.location.href = 'https://fitshelter.com/';
@@ -88,6 +107,7 @@
 </body>
 
 </html>
+
 
 
 
