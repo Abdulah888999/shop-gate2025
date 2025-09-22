@@ -70,22 +70,20 @@
     </video>
   </div>
 
-  <!-- 2. shop icon (now outside .bg and centered by body flex) -->
-  <div class="gate" onclick="goShop()" aria-label="Enter shop">
-    <img src="icon.svg" width="140" height="140" alt="Shop">
-      <circle cx="12" cy="12" r="11" fill="#fff"/>
-      <path d="M7 8c0-1.11.89-2 2-2h6c1.11 0 2 .89 2 2v8H7V8zm9 9H8v-1h8v1zm-4-3c-1.11 0-2-.89-2-2s.89-2 2-2 2 .89 2 2-.89 2-2 2z" fill="#000"/>
-    </img>
+  <!-- 2. small logo in top-left corner -->
+  <div class="gate" onclick="goShop()" aria-label="Enter shop" style="position:fixed; top:20px; left:20px; z-index:2;">
+    <img src="icon.svg" width="70" height="70" alt="Shop">
   </div>
 
   <script>
-    function goShop() {
+    function goShop(){
       window.location.href = 'https://www.alibaba.com/?src=sem_ggl&field=UG&from=sem_ggl&cmpgn=22231466799&adgrp=178850966310&fditm=&tgt=kwd-14739453&locintrst=&locphyscl=9076986&mtchtyp=e&ntwrk=g&device=c&dvcmdl=&creative=732977722035&plcmnt=&plcmntcat=&aceid=&position=&gad_source=1&gad_campaignid=22231466799&gbraid=0AAAAAD8m77pbkARiGYl0YHYlhd3qnjS7Q&gclid=Cj0KCQjw_rPGBhCbARIsABjq9cdoWyJq7sgiuNyrEnq1RnwqKBQeh4EwER9HYcmbKqhse1xWZCZxIowaAnGKEALw_wcB';
     }
   </script>
 </body>
 
 </html>
+
 
 
 
