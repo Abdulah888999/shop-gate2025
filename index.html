@@ -93,15 +93,24 @@
   <div class="center-logo">
     <img src="center-logo.svg" width="120" height="120" alt="Brand mark">
   </div>
+  <!-- 4. about-us icon (top-right corner) -->
+<div class="about" onclick="goAbout()" aria-label="About us"
+     style="position:fixed; top:20px; right:20px; z-index:2; cursor:pointer;">
+  <img src="about-icon.svg" width="70" height="70" alt="About">
+</div>
 
   <script>
     function goShop(){
       window.location.href = 'https://fitshelter.com/';
     }
+    function goAbout(){
+    window.location.href = 'about.html';   // ← NEW
+  }
   </script>
 </body>
 
 </html>
+
 
 
 
