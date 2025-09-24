@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About Us – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* same reset + basic look as your gate page */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#111;color:#eee;line-height:1.6}
+    h1,h2{margin-bottom:.5em}
+    p{margin-bottom:1em}
+    img{max-width:100%;display:block;margin:1.5em auto;border-radius:8px}
+    .wrap{max-width:700px;margin:60px auto;padding:0 20px}
+    /* back-home icon (same style as shop gate) */
+    .home{position:fixed;top:20px;left:20px;z-index:2;cursor:pointer}
+    .home img{width:50px;height:50px;transition:transform .3s}
+    .home:hover{transform:scale(1.08)}
+  </style>
+</head>
+
+<body>
+  <!-- home link (same icon as shop gate) -->
+  <div class="home" onclick="window.location.href='index.html'" aria-label="Back home">
+    <img src="icon.svg" width="50" height="50" alt="Home">
+  </div>
+
+  <!-- content -->
+  <div class="wrap">
+    <h1>About Us</h1>
+
+    <p>Welcome to <strong>Your Brand</strong> – the shelter for fits that actually fit. Born in 2024 from a bedroom in Riyadh, we drop limited collections every Friday. No compromises.</p>
+
+    <img src="about-1.jpg" alt="Studio shot">
+
+    <h2>Our Mission</h2>
+    <p>We believe we can take make it big in the thrifting world. Join us!</p>
+
+    <img src="about-2.jpg" alt="Fabric close-up">
+
+    <h2>Meet the Team</h2>
+    <p>Three friends, one laptop, and a shared Google Drive. If you e-mail us, you’re talking to a human – not a bot.</p>
+
+    <img src="about-3.jpg" alt="Founders">
+
+    <p>Questions? Hit us up at <a href="https://www.instagram.com/Fitshelter.me" style="color:#fff">hello@fitshelter.com</a></p>
+  </div>
+</body>
+</html>
