@@ -4,19 +4,36 @@
   <meta charset="utf-8">
   <title>About Us – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    /* same reset + basic look as your gate page */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#111;color:#eee;line-height:1.6}
-    h1,h2{margin-bottom:.5em}
-    p{margin-bottom:1em}
-    img{max-width:100%;display:block;margin:1.5em auto;border-radius:8px}
-    .wrap{max-width:700px;margin:60px auto;padding:0 20px}
-    /* back-home icon (same style as shop gate) */
-    .home{position:fixed;top:20px;left:20px;z-index:2;cursor:pointer}
-    .home img{width:50px;height:50px;transition:transform .3s}
-    .home:hover{transform:scale(1.08)}
-  </style>
+<style>
+  /* same reset + basic look as your gate page */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#111;color:#eee;line-height:1.6}
+
+  /* ===== 1. background picture ===== */
+  body{
+    background:url('about-bg.jpg') center/cover fixed; /* <-- your bg image */
+    position:relative;
+  }
+  body::before{          /* dark overlay so text pops */
+    content:'';
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:-1;
+  }
+
+  /* ===== 2. softer image corners ===== */
+  img{max-width:100%;display:block;margin:1.5em auto;border-radius:18px} /* <-- less sharp */
+
+  h1,h2{margin-bottom:.5em}
+  p{margin-bottom:1em}
+  .wrap{max-width:700px;margin:60px auto;padding:0 20px;position:relative;z-index:1}
+
+  /* back-home icon (same style as shop gate) */
+  .home{position:fixed;top:20px;left:20px;z-index:2;cursor:pointer}
+  .home img{width:50px;height:50px;transition:transform .3s}
+  .home:hover{transform:scale(1.08)}
+</style>
 </head>
 
 <body>
@@ -29,7 +46,7 @@
   <div class="wrap">
     <h1>About Us</h1>
 
-    <p>Welcome to <strong>Your Brand</strong> – the shelter for fits that actually fit. Born in 2024 from a bedroom in Riyadh, we drop limited collections every Friday. No compromises.</p>
+    <p>Welcome to <strong>FIT SHELTER</strong> – the shelter for fits that actually fit. Born in 2024 from a bedroom in Riyadh, we drop limited collections every Friday. No compromises.</p>
 
     <img src="about-1.JPG" alt="Studio shot">
 
@@ -48,6 +65,7 @@
 </body>
 
 </html>
+
 
 
 
