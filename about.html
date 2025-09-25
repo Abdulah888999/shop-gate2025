@@ -14,24 +14,17 @@ body{margin:0;}
 /* 1. root carries the flowing background */
 html{
   min-height:100%;
-  margin:0;                       /* kill default margin */
+  margin:0;
   background:#000 url('about-bg.jpg') center/cover;
-  background-attachment:local;   /* flows with scroll */
+  background-attachment:local;   /* picture flows */
   position:relative;
-}
-html::before{                     /* overlay glued to root */
-  content:'';
-  position:absolute;
-  inset:0;
-
-  z-index:-1;
 }
 
 /* 2. body just holds content, no background */
 body{
   margin:0;
   position:relative;
-  z-index:1;                     /* sit above overlay */
+  z-index:1;
   color:#eee;
   line-height:1.6;
 }
@@ -79,6 +72,7 @@ body{
 </body>
 
 </html>
+
 
 
 
