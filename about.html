@@ -9,18 +9,22 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#111;color:#eee;line-height:1.6}
 
-  /* ===== 1. background picture ===== */
-  body{
-    background:url('about-bg.jpg') center/cover fixed; /* <-- your bg image */
-    position:relative;
-  }
-  body::before{          /* dark overlay so text pops */
-    content:'';
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.55);
-    z-index:-1;
-  }
+  /* 1. kill the fixed attachment → image scrolls with content */
+body{
+  background:url('about-bg.jpg') center/cover; /* removed "fixed" */
+  background-attachment:scroll;              /* explicit safety */
+  min-height:100vh;                          /* fill full viewport height */
+  margin:0;
+}
+
+/* 2. remove the overlay bars → stretch overlay to full scroll height */
+body::before{
+  content:'';
+  position:absolute;   /* NOT fixed → covers whole scrollable area */
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:-1;
+}
 
   /* ===== 2. softer image corners ===== */
   img{max-width:100%;display:block;margin:1.5em auto;border-radius:18px} /* <-- less sharp */
@@ -65,6 +69,7 @@
 </body>
 
 </html>
+
 
 
 
