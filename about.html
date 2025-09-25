@@ -11,26 +11,27 @@ body{margin:0;}
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#111;color:#eee;line-height:1.6}
 
+/* 1. root carries the flowing background */
 html{
   min-height:100%;
-  background:url('about-bg.jpg') center/cover; /* picture on root */
-  background-attachment:scroll;               /* moves with scroll */
+  margin:0;                       /* kill default margin */
+  background:#000 url('about-bg.jpg') center/cover;
+  background-attachment:local;   /* flows with scroll */
   position:relative;
 }
-html::before{          /* overlay on root → covers entire scroll */
+html::before{                     /* overlay glued to root */
   content:'';
   position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   background:rgba(0,0,0,.55);
   z-index:-1;
 }
-  body{
-  margin:0;            /* kill default top strip */
-  position:relative;   /* keeps content above overlay */
-  z-index:1;
+
+/* 2. body just holds content, no background */
+body{
+  margin:0;
+  position:relative;
+  z-index:1;                     /* sit above overlay */
   color:#eee;
   line-height:1.6;
 }
@@ -78,6 +79,7 @@ html::before{          /* overlay on root → covers entire scroll */
 </body>
 
 </html>
+
 
 
 
