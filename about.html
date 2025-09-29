@@ -17,6 +17,13 @@
   html,body{min-height:100%;font-family:'Montserrat',sans-serif;background:transparent;color:#eee;line-height:1.6}
   html{background:#000 url('about-bg.webp') center/cover;position:relative}
   body{margin:0;position:relative;z-index:1;line-height:1.6}
+   /* 3-D spin on hover */
+.home img{
+  transition:transform .4s ease;
+}
+.home:hover img{
+  transform:perspective(400px) rotateY(720deg);
+}
   
   /* Cool bold styling for the wrap */
   .wrap{
@@ -155,7 +162,7 @@
 
 <body>
 <div class="home" onclick="window.location.href='index.html'" aria-label="Back to gate">
-  <img src="home-logo.webp" width="50" height="50" alt="Home">
+  <img src="center-logo.svg" width="50" height="50" alt="Home">
 </div>
 
   <div class="wrap">
@@ -203,5 +210,6 @@
   </div>
 </body>
 </html>
+
 
 
