@@ -8,20 +8,19 @@
   <!-- 1. PRELOAD hero image (above-the-fold) -->
   <link rel="preload" as="image" href="about-800.webp">
 
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:transparent;color:#eee;line-height:1.6}
-    html{background:#000 url('about-bg.jpg') center/cover;background-attachment:local;position:relative}
-    body{margin:0;position:relative;z-index:1;line-height:1.6}
-    img{max-width:100%;display:block;margin:1.5em auto;border-radius:18px}
-    h1,h2{margin-bottom:.5em}
-    p{margin-bottom:1em}
-    .wrap{max-width:700px;margin:60px auto;padding:0 20px;position:relative;z-index:1}
-    .home{position:fixed;top:20px;left:20px;z-index:2;cursor:pointer}
-    .home img{width:50px;height:50px;transition:transform .3s}
-    .home:hover{transform:scale(1.08)}
-  </style>
-</head>
+ <style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:transparent;color:#eee;line-height:1.6}
+  html{background:#000 url('about-bg.webp') center/cover;position:relative} /* flows now */
+  body{margin:0;position:relative;z-index:1;line-height:1.6}
+  img{max-width:100%;display:block;margin:1.5em auto;border-radius:18px}
+  h1,h2{margin-bottom:.5em}
+  p{margin-bottom:1em}
+  .wrap{max-width:700px;margin:60px auto;padding:0 20px;position:relative;z-index:1}
+  .home{position:fixed;top:20px;left:20px;z-index:2;cursor:pointer}
+  .home img{width:50px;height:50px;transition:transform .3s}
+  .home:hover{transform:scale(1.08)}
+</style>
 
 <body>
   <div class="home" onclick="window.location.href='index.html'" aria-label="Back home">
@@ -48,6 +47,7 @@
   </div>
 </body>
 </html>
+
 
 
 
