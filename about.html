@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Changed to a bold, modern font -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <title>About Us – FIT SHELTER</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,26 +13,141 @@
   <link rel="preload" as="image" href="about-800.webp">
 
  <style>
-   /* make all about-section photos smaller */
-.wrap img{
-  width:75%;          /* 60 % of container width on big screens */
-  max-width:500px;    /* never wider than 500 px */
-  height:auto;        /* keep aspect ratio */
-  margin:1.5em auto;  /* keep your spacing */
-  border-radius:12px; /* keep your rounded corners */
-}
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:transparent;color:#eee;line-height:1.6}
-  html{background:#000 url('about-bg.webp') center/cover;position:relative} /* flows now */
+  html,body{min-height:100%;font-family:'Montserrat',sans-serif;background:transparent;color:#eee;line-height:1.6}
+  html{background:#000 url('about-bg.webp') center/cover;position:relative}
   body{margin:0;position:relative;z-index:1;line-height:1.6}
-  img{max-width:100%;display:block;margin:1.5em auto;border-radius:18px}
-  h1,h2{margin-bottom:.5em}
-  p{margin-bottom:1em}
-  /* cool golden text + sleek font */
-.wrap{
-  color:#d4af37;           /* rich gold */
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
+  
+  /* Cool bold styling for the wrap */
+  .wrap{
+    color:#d4af37;
+    font-family:'Oswald', 'Montserrat', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Bold headings */
+  h1, h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #d4af37, #f4d03f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+    color: #fff;
+    border-left: 5px solid #d4af37;
+    padding-left: 1rem;
+  }
+  
+  /* Cool paragraph styling */
+  p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    line-height: 1.8;
+  }
+  
+  /* Image and text side-by-side containers */
+  .content-section {
+    display: flex;
+    align-items: center;
+    margin: 3rem 0;
+    gap: 3rem;
+  }
+  
+  .content-section.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .text-content {
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  .image-content {
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .image-content img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+  }
+  
+  /* Center content for intro */
+  .intro-section {
+    text-align: center;
+    margin: 3rem 0;
+  }
+  
+  /* Contact styling */
+  .contact-section {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 15px;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+  }
+  
+  .contact-section a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-section a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #d4af37;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .content-section,
+    .content-section.reverse {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+    }
+    
+    .wrap {
+      padding: 1rem;
+    }
+  }
+  
   .home{position:fixed;top:20px;left:20px;z-index:2;cursor:pointer}
   .home img{width:50px;height:50px;transition:transform .3s}
   .home:hover{transform:scale(1.08)}
@@ -43,33 +159,47 @@
   </div>
 
   <div class="wrap">
-    <h1>About Us</h1>
-    <p>Welcome to <strong>FIT SHELTER</strong> – the shelter for fits that actually fit. Born in 2024 from a bedroom in Riyadh, we drop limited collections every Friday. No compromises.</p>
+    <div class="intro-section">
+      <h1>About Us</h1>
+      <p>Welcome to <strong>FIT SHELTER</strong> – the shelter for fits that actually fit. Born in 2024 from a bedroom in Riyadh, we drop limited collections every Friday. No compromises.</p>
+    </div>
 
-    <!-- one-line, no split -->
-    <img src="about-1.webp" alt="Studio shot">
-    <h2>Our Mission</h2>
-    <p>We believe we can take make it big in the thrifting world. Join us!</p>
+    <!-- Image on the right, text on the left -->
+    <div class="content-section">
+      <div class="text-content">
+        <h2>Our Mission</h2>
+        <p>We believe we can make it big in the thrifting world. Join us on this incredible journey as we revolutionize the way people think about sustainable fashion and quality fits.</p>
+      </div>
+      <div class="image-content">
+        <img src="about-1.webp" alt="Studio shot">
+      </div>
+    </div>
 
-    <img src="about-2.webp" alt="Fabric close-up">
+    <!-- Image on the left, text on the right -->
+    <div class="content-section reverse">
+      <div class="text-content">
+        <h2>Meet the Team</h2>
+        <p>Three friends, one laptop, and a shared Google Drive. If you email us, you're talking to a human – not a bot. We're passionate about creating something real and authentic in a world full of corporate fashion.</p>
+      </div>
+      <div class="image-content">
+        <img src="about-2.webp" alt="Fabric close-up">
+      </div>
+    </div>
 
-    <h2>Meet the Team</h2>
-    <p>Three friends, one laptop, and a shared Google Drive. If you e-mail us, you’re talking to a human – not a bot.</p>
+    <!-- Image on the right, text on the left -->
+    <div class="content-section">
+      <div class="text-content">
+        <h2>Our Story</h2>
+        <p>From humble beginnings to big dreams. Every piece we curate tells a story, and every customer becomes part of our growing family. This is just the beginning.</p>
+      </div>
+      <div class="image-content">
+        <img src="about-3.webp" alt="Founders">
+      </div>
+    </div>
 
-    <img src="about-3.webp" alt="Founders"
-
-    <p>Questions? Hit us up at <a href="https://www.instagram.com/Fitshelter.me" style="color:#fff">hello@fitshelter.com</a></p>
+    <div class="contact-section">
+      <p>Questions? Hit us up at <a href="https://www.instagram.com/Fitshelter.me">hello@fitshelter.com</a></p>
+    </div>
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
