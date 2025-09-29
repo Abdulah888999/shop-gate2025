@@ -13,14 +13,16 @@
   <link rel="preload" as="image" href="about-800.webp">
 
  <style>
-   /* 4-D pop on hover */
-.Home img{
+/* BIG + GOLD GLOW on hover */
+.home img{
+  width:100px;                    /* 2× bigger */
+  height:100px;
   transition:transform .3s ease, box-shadow .3s ease;
 }
-.Home:hover img{
-  transform:scale(1.15) translateZ(20px);   /* bigger + closer */
-  box-shadow:0 0 25px #d4af37,             /* gold glow */
-             0 0 50px #d4af37;
+.home:hover img{
+  transform:scale(1.25);          /* grow 25 % */
+  box-shadow:0 0 40px #d4af37,    /* thick gold halo */
+             0 0 80px #d4af37;
 }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{min-height:100%;font-family:'Montserrat',sans-serif;background:transparent;color:#eee;line-height:1.6}
@@ -211,6 +213,7 @@
   </div>
 </body>
 </html>
+
 
 
 
