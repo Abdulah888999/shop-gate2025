@@ -13,18 +13,19 @@
   <link rel="preload" as="image" href="about-800.webp">
 
  <style>
+   /* 4-D pop on hover */
+.Home img{
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.Home:hover img{
+  transform:scale(1.15) translateZ(20px);   /* bigger + closer */
+  box-shadow:0 0 25px #d4af37,             /* gold glow */
+             0 0 50px #d4af37;
+}
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{min-height:100%;font-family:'Montserrat',sans-serif;background:transparent;color:#eee;line-height:1.6}
   html{background:#000 url('about-bg.webp') center/cover;position:relative}
   body{margin:0;position:relative;z-index:1;line-height:1.6}
-   /* 3-D spin on hover */
-.Home img{
-  transition:transform .4s ease;
-}
-.Home:hover img{
-  transform:perspective(400px) rotateY(360deg);
-}
-  
   /* Cool bold styling for the wrap */
   .wrap{
     color:#d4af37;
@@ -185,7 +186,7 @@
     <!-- Image on the left, text on the right -->
     <div class="content-section reverse">
       <div class="text-content">
-        <h2>Meet the Team</h2>
+        <h2>Our Team</h2>
         <p>Three friends, one laptop, and a shared Google Drive. If you email us, you're talking to a human – not a bot. We're passionate about creating something real and authentic in a world full of corporate fashion.</p>
       </div>
       <div class="image-content">
@@ -196,11 +197,11 @@
     <!-- Image on the right, text on the left -->
     <div class="content-section">
       <div class="text-content">
-        <h2>Our Story</h2>
+        <h2>Our pride & joy</h2>
         <p>From humble beginnings to big dreams. Every piece we sell tells a story, and every customer becomes part of our growing family. This is just the beginning.</p>
       </div>
       <div class="image-content">
-        <img src="about-2.webp" alt="Founders">
+        <img src="stuff.webp" alt="Founders">
       </div>
     </div>
 
@@ -210,6 +211,7 @@
   </div>
 </body>
 </html>
+
 
 
 
