@@ -9,6 +9,14 @@
   <link rel="preload" as="image" href="about-800.webp">
 
  <style>
+   /* make all about-section photos smaller */
+.wrap img{
+  width:60%;          /* 60 % of container width on big screens */
+  max-width:500px;    /* never wider than 500 px */
+  height:auto;        /* keep aspect ratio */
+  margin:1.5em auto;  /* keep your spacing */
+  border-radius:0px; /* keep your rounded corners */
+}
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:transparent;color:#eee;line-height:1.6}
   html{background:#000 url('about-bg.webp') center/cover;position:relative} /* flows now */
@@ -47,6 +55,7 @@
   </div>
 </body>
 </html>
+
 
 
 
