@@ -21,6 +21,17 @@
   html,body{min-height:100%;font-family:'Montserrat',sans-serif;background:transparent;color:#eee;line-height:1.6}
   html{background:#000 url('about-bg.webp') center/cover;position:relative}
   body{margin:0;position:relative;z-index:1;line-height:1.6}
+   /* ===== logo size (AFTER reset) ===== */
+.home img{
+  width:120px !important;
+  height:120px !important;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.home:hover img{
+  transform:scale(1.15);
+  box-shadow:0 0 25px #d4af37,
+             0 0 50px #d4af37;
+}
   /* Cool bold styling for the wrap */
   .wrap{
     color:#d4af37;
@@ -206,6 +217,7 @@
   </div>
 </body>
 </html>
+
 
 
 
