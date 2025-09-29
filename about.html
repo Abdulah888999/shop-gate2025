@@ -13,9 +13,21 @@
   <link rel="preload" as="image" href="about-800.webp">
 
  <style>
+/* bigger + eternal spin + gold glow on hover */
 .home img{
-  width:150px;        /* 3× bigger */
+  width:150px;
   height:150px;
+  animation:spin 4s linear infinite;   /* never-ending rotate */
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.home:hover img{
+  transform:scale(1.15);               /* hover grow */
+  box-shadow:0 0 25px #d4af37,
+             0 0 50px #d4af37;
+}
+@keyframes spin{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
 }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{min-height:100%;font-family:'Montserrat',sans-serif;background:transparent;color:#eee;line-height:1.6}
@@ -217,6 +229,7 @@
   </div>
 </body>
 </html>
+
 
 
 
