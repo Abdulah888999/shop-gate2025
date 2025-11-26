@@ -69,7 +69,7 @@
       filter:drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
     }
 
-   /* the clickable shop icon with continuous 3D spin animation */
+    /* the clickable shop icon with continuous 3D spin animation */
     .gate{
       cursor:pointer;
       transition:transform .3s ease;
@@ -96,32 +96,75 @@
       100% { transform: rotateY(360deg); }
     }
 
-    /* Navigation styles */
+    /* Navigation with floating logos at top */
     nav {
       position:fixed;
       top:20px;
-      right:20px;
+      left:50%;
+      transform:translateX(-50%);
       z-index:10;
       display:flex;
-      gap:1rem;
+      gap:1.5rem;
+      flex-wrap:nowrap;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      backdrop-filter: blur(10px);
     }
     
     nav a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       padding:0.5rem 1rem;
-      background:rgba(212, 175, 55, 0.2);
-      border:1px solid #d4af37;
-      border-radius:25px;
+      background:transparent;
+      border:none;
       color:#d4af37;
       text-decoration:none;
       font-weight:600;
       transition:all 0.3s ease;
-      backdrop-filter:blur(10px);
+      position: relative;
     }
     
     nav a:hover {
-      background:rgba(212, 175, 55, 0.3);
+      color:#f4d03f;
       transform:translateY(-2px);
-      box-shadow:0 5px 15px rgba(212, 175, 55, 0.3);
+    }
+    
+    nav a.active {
+      color:#f4d03f;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+    
+    /* Logo icons for navigation */
+    nav a::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    nav a[href="shop.html"]::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z'/%3E%3C/svg%3E");
+    }
+    
+    nav a[href="about.html"]::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E");
+    }
+    
+    nav a[href="collections.html"]::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M22 16V4c0-1.11-.89-2-2-2H8c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2zm-11-4l2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.11.89 2 2 2h14v-2H4V6H2z'/%3E%3C/svg%3E");
+    }
+    
+    nav a[href="lookbook.html"]::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/%3E%3C/svg%3E");
+    }
+    
+    nav a[href="contact.html"]::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
     }
 
     /* Main content area */
@@ -171,11 +214,20 @@
     /* Mobile responsiveness */
     @media (max-width: 768px) {
       nav {
-        flex-direction:column;
-        gap:0.5rem;
-        top:auto;
-        bottom:20px;
-        right:20px;
+        gap:1rem;
+        padding: 0.5rem 1rem;
+        left:50%;
+        transform:translateX(-50%);
+      }
+      
+      nav a {
+        padding:0.4rem 0.8rem;
+        font-size:0.9rem;
+      }
+      
+      nav a::before {
+        width: 20px;
+        height: 20px;
       }
       
       .main-content h1 {
@@ -192,7 +244,21 @@
 </head>
 
 <body>
-  <!-- Navigation with multiple pages -->
+  <!-- 1. background video -->
+  <div class="bg">
+    <video autoplay muted loop playsinline>
+      <source src="bg.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Logo with continuous 3D spin animation -->
+  <div class="gate" onclick="goShop()" aria-label="Enter shop">
+    <div class="gate-inner">
+      <img src="icon.svg" width="50" height="50" alt="Shop">
+    </div>
+  </div>
+
+  <!-- Navigation with floating logos -->
   <nav>
     <a href="shop.html" onclick="goShop(event)">Shop</a>
     <a href="about.html">About</a>
@@ -200,13 +266,6 @@
     <a href="lookbook.html">Lookbook</a>
     <a href="contact.html">Contact</a>
   </nav>
-
-  <!-- Logo with 3D flip animation -->
-  <div class="gate" onclick="goShop()" aria-label="Enter shop">
-    <div class="gate-inner">
-      <img src="icon.svg" width="50" height="50" alt="Shop">
-    </div>
-  </div>
 
   <!-- Content wrapper -->
   <div class="content-wrapper">
@@ -246,5 +305,3 @@
   </script>
 </body>
 </html>
-
-
