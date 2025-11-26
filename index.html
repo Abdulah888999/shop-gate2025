@@ -60,7 +60,7 @@
       filter:drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
     }
 
-    /* the clickable shop icon with 3D flip animation */
+   /* the clickable shop icon with continuous 3D spin animation */
     .gate{
       cursor:pointer;
       transition:transform .3s ease;
@@ -72,23 +72,18 @@
     }
     .gate:hover{transform:scale(1.1)}
     
-    /* 3D flip animation container */
+    /* 3D continuous spin animation container */
     .gate-inner {
       position: relative;
       width: 50px;
       height: 50px;
       text-align: center;
-      transition: transform 0.8s;
       transform-style: preserve-3d;
+      animation: continuousFlip3D 4s linear infinite;
     }
     
-    .gate:hover .gate-inner {
-      animation: flip3D 0.8s ease-in-out;
-    }
-    
-    @keyframes flip3D {
+    @keyframes continuousFlip3D {
       0% { transform: rotateY(0deg); }
-      50% { transform: rotateY(180deg); }
       100% { transform: rotateY(360deg); }
     }
 
@@ -242,3 +237,4 @@
   </script>
 </body>
 </html>
+
