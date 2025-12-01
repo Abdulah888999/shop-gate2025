@@ -14,16 +14,15 @@
     /* reset browser defaults */
     *{box-sizing:border-box;margin:0;padding:0}
 
-    /* make the page fill the screen and enable scrolling */
-    html,body{height:100%;overflow-y:auto}
+    /* make the page fill the screen and hide scrollbars */
+    html,body{height:100%;overflow:hidden}
 
     /* centre everything with flexbox */
     body{
       display:flex;
-      flex-direction:column;
       align-items:center;
-      justify-content:flex-start;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      justify-content:center;
+      font-family:'Lama Sans', -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
       background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #3a3a3a 100%);
       min-height:100vh;
       color:#d4af37;
@@ -43,30 +42,21 @@
       object-fit:cover; /* crop to cover screen */
     }
     
-    /* Content wrapper for scrolling */
-    .content-wrapper {
-      width:100%;
-      max-width:1200px;
-      margin:0 auto;
-      padding:2rem;
-      flex:1;
-    }
-
     /* non-clickable centre logo */
     .center-logo{
-      position:relative;
-      margin:2rem auto;
+      position:fixed;
+      inset:0;                    /* stretch to full viewport */
+      margin:auto;                /* dead-centre trick */
       z-index:1;
       pointer-events:none;
-      display:flex;
+      display:flex;               /* centre its child */
       align-items:center;
       justify-content:center;
     }
     .center-logo img{
-      width:280px;
-      height:280px;
-      opacity:0.8;
-      filter:drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+      width:380px;             /* change size here */
+      height:380px;
+      opacity:0.6;             /* optional fade */
     }
 
     /* the clickable shop icon with continuous 3D spin animation */
@@ -167,49 +157,11 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
     }
 
-    /* Main content area */
-    .main-content {
-      text-align:center;
-      margin-top:2rem;
+    /* gentle pulse animation */
+    @keyframes pulse{
+      50%{transform:scale(1.04)}
     }
-    
-    .main-content h1 {
-      font-size:3rem;
-      margin-bottom:1rem;
-      text-shadow:2px 2px 4px rgba(0,0,0,0.5);
-      background: linear-gradient(45deg, #d4af37, #f4d03f);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .main-content p {
-      font-size:1.2rem;
-      margin-bottom:2rem;
-      color:#fff;
-      text-shadow:1px 1px 2px rgba(0,0,0,0.7);
-    }
-
-    /* Section styles for scrollable content */
-    .section {
-      margin:3rem 0;
-      padding:2rem;
-      background:rgba(0,0,0,0.3);
-      border-radius:15px;
-      border:1px solid rgba(212, 175, 55, 0.2);
-    }
-    
-    .section h2 {
-      font-size:2rem;
-      margin-bottom:1rem;
-      color:#d4af37;
-      text-shadow:1px 1px 2px rgba(0,0,0,0.5);
-    }
-    
-    .section p {
-      color:#fff;
-      line-height:1.6;
-    }
+    .gate{animation:pulse 2.5s infinite}
 
     /* Mobile responsiveness */
     @media (max-width: 768px) {
@@ -228,10 +180,6 @@
       nav a::before {
         width: 20px;
         height: 20px;
-      }
-      
-      .main-content h1 {
-        font-size:2rem;
       }
       
       .center-logo img {
@@ -267,34 +215,9 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Content wrapper -->
-  <div class="content-wrapper">
-    <!-- Center logo -->
-    <div class="center-logo">
-      <img src="center-logo.svg" width="280" height="280" alt="Brand mark">
-    </div>
-
-    <!-- Main content -->
-    <div class="main-content">
-      <h1>FIT SHELTER</h1>
-      <p>The shelter for fits that actually fit. Limited drops every Friday.</p>
-    </div>
-
-    <!-- Additional scrollable sections -->
-    <div class="section">
-      <h2>Welcome to FIT SHELTER</h2>
-      <p>Born in 2024 from a bedroom in Riyadh, we're revolutionizing the way people think about sustainable fashion and quality fits. Every piece in our collection is carefully chosen and given a second chance to tell a new story.</p>
-    </div>
-
-    <div class="section">
-      <h2>This Week's Drop</h2>
-      <p>Get ready for our latest collection featuring carefully curated vintage pieces and modern classics. Available Friday at midnight - these pieces won't last long.</p>
-    </div>
-
-    <div class="section">
-      <h2>Our Philosophy</h2>
-      <p>We believe fashion should be authentic, sustainable, and accessible. No compromises on quality, no fast fashion - just timeless pieces that make you feel confident and unique.</p>
-    </div>
+  <!-- Center logo -->
+  <div class="center-logo">
+    <img src="center-logo.svg" width="380" height="380" alt="Brand mark">
   </div>
 
   <script>
