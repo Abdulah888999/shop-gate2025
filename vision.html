@@ -3,89 +3,53 @@
 <head>
   <!-- 1. basic house-keeping -->
   <meta charset="utf-8">
-  <title>Your Brand – Shop</title>
+  <title>Vision – Shop Gate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- 2. quick SEO -->
-  <meta name="description" content="Official store – limited drops every Friday.">
+  <meta name="description" content="Our vision for Shop Gate – blending thrift, culture, and music.">
 
-  <!-- 3. the styles (all in one place so we don't need extra files) -->
+  <!-- 3. the styles -->
   <style>
     /* reset browser defaults */
     *{box-sizing:border-box;margin:0;padding:0}
 
-    /* make the page fill the screen and hide scrollbars */
-    html,body{height:100%;overflow:hidden}
+    /* make the page fill the screen */
+    html,body{height:100%}
 
-    /* centre everything with flexbox */
+    /* page styling */
     body{
-      display:flex;
-      align-items:center;
-      justify-content:center;
       font-family:'Lama Sans', -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
       background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #3a3a3a 100%);
       min-height:100vh;
       color:#d4af37;
+      overflow-x:hidden;
     }
 
     /* fullscreen background container */
     .bg{
-      position:fixed;   /* sit behind everything */
-      inset:0;          /* top:0 right:0 bottom:0 left:0 */
-      z-index:-1;       /* push to back */
-      background:#000;  /* fallback colour while video loads */
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:#000;
     }
-    /* the actual video */
     .bg video{
       width:100%;
       height:100%;
-      object-fit:cover; /* crop to cover screen */
+      object-fit:cover;
     }
 
-    .center-logo img{
-      width:380px;             /* change size here */
-      height:380px;
-      opacity:0.6;             /* optional fade */
-    }
-
-    /* the clickable shop icon with continuous 3D spin animation */
-    .gate{
-      cursor:pointer;
-      transition:transform .3s ease;
-      position:fixed;
-      top:20px;
-      left:20px;
-      z-index:10;
-      perspective:1000px;
-    }
-    .gate:hover{transform:scale(1.1)}
-
-    /* 3D continuous spin animation container */
-    .gate-inner {
-      position: relative;
-      width: 50px;
-      height: 50px;
-      text-align: center;
-      transform-style: preserve-3d;
-      animation: continuousFlip3D 4s linear infinite;
-    }
-
-    @keyframes continuousFlip3D {
-      0% { transform: rotateY(0deg); }
-      100% { transform: rotateY(360deg); }
-    }
-
-    /* Navigation with floating logos at top */
+    /* Navigation styles */
     nav {
       position:fixed;
       top:20px;
       left:50%;
       transform:translateX(-50%);
-      z-index:10;
+      z-index:1000;
       display:flex;
       gap:1.5rem;
       flex-wrap:nowrap;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.8);
       padding: 0.75rem 1.5rem;
       border-radius: 50px;
       border: 1px solid rgba(212, 175, 55, 0.3);
@@ -146,19 +110,100 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
     }
 
-    /* gentle pulse animation */
+    /* Logo gate */
+    .gate{
+      cursor:pointer;
+      transition:transform .3s ease;
+      position:fixed;
+      top:20px;
+      left:20px;
+      z-index:1001;
+      perspective:1000px;
+    }
+    .gate:hover{transform:scale(1.1)}
+
+    .gate-inner {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      transform-style: preserve-3d;
+      animation: continuousFlip3D 4s linear infinite;
+    }
+
+    @keyframes continuousFlip3D {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+
     @keyframes pulse{
       50%{transform:scale(1.04)}
     }
     .gate{animation:pulse 2.5s infinite}
+
+    /* Content styling */
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 120px 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .vision-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .vision-header h1 {
+      font-size: clamp(2.5rem,5vw,4rem);
+      font-weight: 300;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #d4af37, #f4d03f);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .vision-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .vision-card {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 20px;
+      padding: 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .vision-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+    }
+
+    .vision-card h3 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: #f4d03f;
+    }
+
+    .vision-card p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
 
     /* Mobile responsiveness */
     @media (max-width: 768px) {
       nav {
         gap:1rem;
         padding: 0.5rem 1rem;
-        left:50%;
-        transform:translateX(-50%);
       }
 
       nav a {
@@ -171,17 +216,25 @@
         height: 20px;
       }
 
-      .center-logo img {
-        width:200px;
-        height:200px;
+      .content {
+        padding: 100px 15px 30px;
+      }
+
+      .vision-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .vision-card {
+        padding: 30px 20px;
       }
     }
   </style>
-  <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 
 <body>
-  <!-- 1. background video -->
+  <!-- Background video -->
   <div class="bg">
     <video autoplay muted loop playsinline>
       <source src="bg.mp4" type="video/mp4">
@@ -191,7 +244,7 @@
   <!-- Navigation Header -->
   <nav>
     <a href="about.html">About Us</a>
-    <a href="vision.html">Vision</a>
+    <a href="vision.html" class="active">Vision</a>
     <a href="product.html">Product</a>
     <a href="events.html">Events</a>
     <a href="contact.html">Contact</a>
@@ -204,17 +257,35 @@
     </div>
   </div>
 
-  <!-- Center logo with tagline -->
-  <div class="center-logo">
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;">
-      <!-- logo -->
-      <img src="center-logo.svg" width="380" height="380" alt="Brand mark" style="opacity:0.6;">
-      <!-- tagline in Lama Sans -->
-      <p style="font-family:'Lama Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:400;color:#d4af37;line-height:1.3;max-width:600px;text-shadow:0 2px 4px rgba(0,0,0,.5);">
-        Pre-Loved Pieces,<br>
-        New Journeys<br>
-        <span style="font-size:0.9em;opacity:.9;">A curated experience that blends thrift, culture, and music.</span>
+  <!-- Main Content -->
+  <div class="content">
+    <div class="vision-header">
+      <h1>Our Vision</h1>
+      <p style="font-size: 1.3rem; opacity: 0.8; max-width: 800px; margin: 0 auto;">
+        Creating a sustainable future where fashion meets culture, and every piece tells a story.
       </p>
+    </div>
+
+    <div class="vision-content">
+      <div class="vision-card">
+        <h3>Sustainability First</h3>
+        <p>We believe in the power of pre-loved fashion to reduce waste and create a more sustainable future. Every piece in our collection has been carefully selected to give it a new life and new purpose.</p>
+      </div>
+
+      <div class="vision-card">
+        <h3>Cultural Fusion</h3>
+        <p>Our vision extends beyond fashion to create a cultural hub where music, art, and style converge. We celebrate diversity and creativity through curated experiences that inspire and connect communities.</p>
+      </div>
+
+      <div class="vision-card">
+        <h3>Community Building</h3>
+        <p>We're more than a shop – we're a community of conscious consumers, creators, and culture enthusiasts. Our events and spaces are designed to foster meaningful connections and creative collaborations.</p>
+      </div>
+
+      <div class="vision-card">
+        <h3>Musical Heritage</h3>
+        <p>Music is the heartbeat of our culture. We integrate musical influences into everything we do, from our curated playlists in-store to partnerships with local artists and musicians.</p>
+      </div>
     </div>
   </div>
 
