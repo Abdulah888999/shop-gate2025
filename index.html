@@ -79,10 +79,11 @@
     .shop-button {
       cursor: pointer;
       transition: transform 0.3s ease;
-      position: relative;
+      position: fixed;
+      top: 20px;
+      left: 20px;
       z-index: 10;
       perspective: 1000px;
-      margin-top: 2rem;
     }
 
     .shop-button:hover {
@@ -137,10 +138,10 @@
       transform:translateX(-50%);
       z-index:10;
       display:flex;
-      gap:1.5rem;
+      gap:0.8rem;
       flex-wrap:nowrap;
       background: rgba(0, 0, 0, 0.7);
-      padding: 0.75rem 1.5rem;
+      padding: 0.5rem 1rem;
       border-radius: 50px;
       border: 1px solid rgba(212, 175, 55, 0.3);
       backdrop-filter: blur(10px);
@@ -149,8 +150,8 @@
     nav a {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding:0.5rem 1rem;
+      gap: 0.3rem;
+      padding:0.3rem 0.6rem;
       background:transparent;
       border:none;
       color:#d4af37;
@@ -158,6 +159,7 @@
       font-weight:600;
       transition:all 0.3s ease;
       position: relative;
+      font-size: 0.85rem;
     }
 
     nav a:hover {
@@ -256,12 +258,13 @@
       Pre-Loved Pieces, New Journeys<br>
       <span style="font-size:0.85em;opacity:.9;">A curated experience that blends thrift, culture, and music.</span>
     </p>
-    <!-- Shop button -->
-    <div class="shop-button" onclick="goShop()" aria-label="Go to shop">
-      <div class="shop-button-inner">
-        <img src="center-logo.svg" width="60" height="60" alt="Shop">
-      </div>
     </div>
+</div>
+
+<!-- Shop button in top-left -->
+<div class="shop-button" onclick="goShop()" aria-label="Go to shop">
+  <div class="shop-button-inner">
+    <img src="center-logo.svg" width="60" height="60" alt="Shop">
   </div>
 </div>
 

@@ -1,8 +1,7 @@
 # Website Updates
 
-## [x] Remove Contact page from navigation (reduce to 4 pages)
-## [x] Delete contact.html file
-## [x] Update homepage to have pulsating 3D button linking to fitshelter.com
-## [x] Use center-logo.svg for homepage button
-## [x] Update other pages to have turning 360 logo in top-left
-## [x] Ensure all logos link back to homepage
+## [x] Match about page logo size with other pages
+## [x] Make homepage navigation tile smaller and more compact
+## [x] Move homepage golden circle to top-left instead of center
+## [x] Remove video from other pages, use black/golden tint background
+## [x] Remove photos from about page and add the specified message text
