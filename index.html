@@ -75,6 +75,60 @@
       100% { transform: rotateY(360deg); }
     }
 
+    /* Shop button - pulsating 3D effect */
+    .shop-button {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 10;
+      perspective: 1000px;
+      margin-top: 2rem;
+    }
+
+    .shop-button:hover {
+      transform: scale(1.1);
+    }
+
+    .shop-button-inner {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      text-align: center;
+      transform-style: preserve-3d;
+      animation: pulsate3D 2s ease-in-out infinite;
+      background: linear-gradient(135deg, #d4af37, #f4d03f);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+    }
+
+    .shop-button-inner img {
+      width: 60px;
+      height: 60px;
+      filter: brightness(0) invert(1);
+    }
+
+    @keyframes pulsate3D {
+      0%, 100% { 
+        transform: scale(1) rotateY(0deg); 
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+      }
+      25% { 
+        transform: scale(1.05) rotateY(90deg); 
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+      }
+      50% { 
+        transform: scale(1.1) rotateY(180deg); 
+        box-shadow: 0 20px 50px rgba(212, 175, 55, 0.8);
+      }
+      75% { 
+        transform: scale(1.05) rotateY(270deg); 
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+      }
+    }
+
     /* Navigation with floating logos at top */
     nav {
       position:fixed;
@@ -142,15 +196,8 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z'/%3E%3C/svg%3E");
     }
 
-    nav a[href="contact.html"]::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
-    }
 
-    /* gentle pulse animation */
-    @keyframes pulse{
-      50%{transform:scale(1.04)}
-    }
-    .gate{animation:pulse 2.5s infinite}
+    
 
     /* Mobile responsiveness */
     @media (max-width: 768px) {
@@ -194,15 +241,9 @@
     <a href="vision.html">Vision</a>
     <a href="product.html">Product</a>
     <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
   </nav>
 
-    <!-- Logo with link to homepage -->
-    <div class="gate" onclick="goHome()" aria-label="Go to homepage">
-      <div class="gate-inner">
-        <img src="icon.svg" width="50" height="50" alt="Shop">
-      </div>
-    </div>
+    
 
 
 <!-- centre logo + smaller golden tagline -->
@@ -215,12 +256,18 @@
       Pre-Loved Pieces, New Journeys<br>
       <span style="font-size:0.85em;opacity:.9;">A curated experience that blends thrift, culture, and music.</span>
     </p>
+    <!-- Shop button -->
+    <div class="shop-button" onclick="goShop()" aria-label="Go to shop">
+      <div class="shop-button-inner">
+        <img src="center-logo.svg" width="60" height="60" alt="Shop">
+      </div>
+    </div>
   </div>
 </div>
 
   <script>
-    function goHome() {
-      window.location.href = 'index.html';
+    function goShop() {
+      window.location.href = 'https://fitshelter.com/';
     }
   </script>
 </body>
